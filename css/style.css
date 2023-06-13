@@ -17,6 +17,14 @@
     font-weight: 600;
 }
 
+#titulo-modal{
+    font-weight: 600;
+}
+
+#subtitulo-modal{
+    font-weight: 600;
+}
+
 #tabela{
     position: relative;
     top: 140px;
@@ -50,6 +58,9 @@
     box-shadow: inset -4px 4px 0 #313131 !important;
 }
 
-
+.btns{
+    position: relative;
+    top: 150px;
+}
 
 
