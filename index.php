@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <nav class="navbar fixed-top bg-body-tertiary">
+    <nav class="navbar fixed-top navbar-expand-lg">
 
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -23,6 +23,50 @@
         </div>
 
     </nav>
+
+    <main class="container">
+
+        <h1 id="titulo" class="display-6">Agenda</h1>
+
+        <table id="tabela" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Feito</th>
+                </tr>
+            </thead>
+
+            
+            <tbody>
+                <tr>
+                    <th scope="row">❤</th>
+                        <td>1</td>
+                        <td>Aqui vai a descrição da tarefa</td>
+                        <td>13/06/2023</td>
+                        <td><input type="checkbox" id="status" name="check-status" value="xxx"></td>
+                </tr>
+                <tr>
+                    <th scope="row">❤</th>
+                        <td>2</td>
+                        <td>Aqui vai a descrição da tarefa</td>
+                        <td>13/06/2023</td>
+                        <td><input type="checkbox" id="status" name="check-status" value="xxx"></td>
+                </tr>
+                <tr>
+                    <th scope="row">❤</th>
+                        <td>3</td>
+                        <td>Aqui vai a descrição da tarefa</td>
+                        <td>13/06/2023</td>
+                        <td><input type="checkbox" id="status" name="check-status" value="xxx"></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </main>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
