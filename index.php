@@ -7,7 +7,7 @@
 
     <!--Links-->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img-icon/16x16.png">
+    <link rel="icon" href="img-icon/agenda/16x16.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
@@ -16,7 +16,7 @@
 
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="img-icon/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
+                <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
 
             <button type="button" class="btn btn-primary">Login</button>
@@ -31,36 +31,48 @@
         <table id="tabela" class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Status</th>
                     <th scope="col">ID</th>
+                    <th scope="col">Título</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Data</th>
-                    <th scope="col">Feito</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Excluir</th>
+                    <th scope="col">Ver</th>
                 </tr>
             </thead>
 
             
             <tbody>
-                <tr>
-                    <th scope="row">❤</th>
+            <tr>
+                    <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
                         <td>1</td>
+                        <td>Título da tarefa</td>
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
-                        <td><input type="checkbox" id="status" name="check-status" value="xxx"></td>
+                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
                 </tr>
                 <tr>
-                    <th scope="row">❤</th>
+                    <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
                         <td>2</td>
+                        <td>Título da tarefa</td>
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
-                        <td><input type="checkbox" id="status" name="check-status" value="xxx"></td>
+                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
                 </tr>
                 <tr>
-                    <th scope="row">❤</th>
+                    <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
                         <td>3</td>
+                        <td>Título da tarefa</td>
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
-                        <td><input type="checkbox" id="status" name="check-status" value="xxx"></td>
+                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
                 </tr>
 
             </tbody>
