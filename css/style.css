@@ -7,21 +7,20 @@
 #texto-header{
     display: inline;
     margin-left: 1vw;
-    border: 1px solid green;
     font-size: 24pt;
     font-weight: 600;
 }
 
 .navbar{
-    border: 1px solid yellow;
+    border: 1px solid green;
 }
 
 .logo-header{
-    border: 1px solid red;
+    
 }
 
 .container{
-    border: 1px solid blue;
+    
 }
 
 .btn{
