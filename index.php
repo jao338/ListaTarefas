@@ -19,7 +19,7 @@
                 <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
 
-            <button type="button" class="btn btn-primary">Login</button>
+            <button type="button" id="btn-login" class="btn btn-primary">Login</button>
         </div>
 
     </nav>
@@ -36,7 +36,7 @@
                     <th scope="col">Título</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Data</th>
-                    <th scope="col">Edit</th>
+                    <th scope="col">Editar</th>
                     <th scope="col">Excluir</th>
                     <th scope="col">Ver</th>
                 </tr>
@@ -51,8 +51,8 @@
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
                         <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-remove"></a></td>
+                        <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
                 </tr>
                 <tr>
                     <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
@@ -61,8 +61,8 @@
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
                         <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-remove"></a></td>
+                        <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
                 </tr>
                 <tr>
                     <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
@@ -71,23 +71,20 @@
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
                         <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-remove"></a></td>
+                        <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
                 </tr>
 
             </tbody>
         </table>
 
-        <div class="btns">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Modal</button>
-        </div>
-        
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!--Modal-->
+        <div class="modal fade" id="janelaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
 
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 id="titulo-modal" class="modal-title fs-5" id="exampleModalLabel">Título da tarefa</h1>
+                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
