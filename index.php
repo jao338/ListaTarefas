@@ -31,7 +31,12 @@
         <table id="tabela" class="table">
             <thead>
                 <tr>
-                    <th scope="col">Status</th>
+                    <th style="border-bottom: 0;">
+                        <button type="button" id="btn-tarefa" class="btn btn-primary">Nova Tarefa</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col"><br>Status</th>
                     <th scope="col">ID</th>
                     <th scope="col">Título</th>
                     <th scope="col">Descrição</th>
@@ -50,8 +55,8 @@
                         <td>Título da tarefa</td>
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
-                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-remove"></a></td>
+                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
                         <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
                 </tr>
                 <tr>
@@ -60,8 +65,8 @@
                         <td>Título da tarefa</td>
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
-                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-remove"></a></td>
+                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
                         <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
                 </tr>
                 <tr>
@@ -70,14 +75,16 @@
                         <td>Título da tarefa</td>
                         <td>Aqui vai a descrição da tarefa</td>
                         <td>13/06/2023</td>
-                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="24" height="24" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="24" height="24" class="icon-remove"></a></td>
+                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
+                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
                         <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
                 </tr>
 
             </tbody>
         </table>
 
+        
+        
         <!--Modal-->
         <div class="modal fade" id="janelaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
 

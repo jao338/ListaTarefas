@@ -28,8 +28,7 @@
 #tabela{
     position: relative;
     top: 140px;
-    border: 1px solid #313131;
-    
+    border: 1px solid black;
 }
 
 .navbar{
@@ -41,24 +40,53 @@
     height: 40px;
 }
 
+#div-btn-tarefa{
+    position: relative;
+    top: -140px;
+}
+
+#btn-tarefa{
+    width: 128px;
+    height: 40px;
+}
+
 #btn-view{
     padding: 0;
     width: 32px;
     height: 32px;
-    border: 1px solid #313131;
-    box-shadow: -1px 2px 0 #313131, -2px 4px 0 #313131 !important;
+    border: 1px solid #212121;
+    box-shadow: -1px 2px 0 #212121, -2px 4px 0 #212121 !important;
 }
 
-
 #btn-view:active{
-    box-shadow: inset -2px 2px 0 #313131 !important;
+    box-shadow: inset -2px 2px 0 #212121 !important;
+}
+
+#btn-edit{
+    border-radius: 5px;
+    border: 1px solid #212121;
+    box-shadow: -1px 2px 0 #212121, -2px 4px 0 #212121 !important;
+}
+
+#btn-edit:active{
+    box-shadow: inset -2px 2px 0 #212121 !important;
+}
+
+#btn-remove{
+    border-radius: 5px;
+    border: 1px solid #212121;
+    box-shadow: -1px 2px 0 #212121, -2px 4px 0 #212121 !important;
+}
+
+#btn-remove:active{
+    box-shadow: inset -2px 2px 0 #212121 !important;
 }
 
 .btn-primary{
     background-color: #fba615 !important;
-    border: 1px solid #313131 !important;
+    border: 1px solid #212121 !important;
     font-size: 12pt;
-    box-shadow: -2px 3px 0 #313131, -4px 6px 0 #313131 !important;
+    box-shadow: -2px 3px 0 #212121, -4px 6px 0 #212121 !important;
 }
 
 .btn-primary:hover{
@@ -68,12 +96,9 @@
 .btn-primary:active{
     background-color: #e59d20 !important;
     font-size: 10pt;
-    box-shadow: inset -4px 4px 0 #313131 !important;
+    box-shadow: inset -4px 4px 0 #212121 !important;
 }
 
-.btns{
-    position: relative;
-    top: 150px;
-}
+
 
 
