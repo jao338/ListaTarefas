@@ -19,7 +19,9 @@
                 <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
 
-            <button type="button" id="btn-login" class="btn btn-primary">Login</button>
+            <form action="login.php" method="POST">
+                <button type="submit" id="btn-login" class="btn btn-primary">Login</button>
+            </form>
         </div>
 
     </nav>
