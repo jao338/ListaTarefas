@@ -24,7 +24,8 @@
             session_start();
 
             if ($_SESSION["status"] == 1) {
-               echo "<a href='perfil.php'>Perfil</a>";
+                
+               echo "<form action='perfil.php' method='POST'><button type='submit' id='btn-profile' class='btn btn-primary'><img src='img-icon/profile/512x512_.png' alt='profile' width='24' height='24'></button></form>";
             }
             ?>
             
@@ -44,7 +45,7 @@
             <thead>
             <tr>
                 <th style="border-bottom: 0;">
-                    <button type="button" id="btn-tarefa" class="btn btn-primary">Nova Tarefa</button>
+                    <button type="button" id="btn-tarefa" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TarefaModal">Nova Tarefa</button>
                 </th>
             </tr>
             <tr>
@@ -62,14 +63,14 @@
             
             <tbody>
             <tr>
-                <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
+                <th scope="row">Feito</th>
                     <td>0</td>
                     <td>Título da tarefa</td>
                     <td>Aqui vai a descrição da tarefa</td>
                     <td>13/06/2023</td>
                     <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
                     <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
-                    <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
+                    <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#ViewModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
             </tr>
 
             </tbody>
@@ -77,8 +78,8 @@
 
         
         
-        <!--Modal-->
-        <div class="modal fade" id="janelaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
+        <!--Modal view-->
+        <div class="modal fade" id="ViewModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
 
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
@@ -99,6 +100,38 @@
             </div>
             
         </div>
+
+        <!--Modal tarefa-->
+        <div class="modal fade" id="TarefaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div>
+                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Título</strong></label>
+                            <input type="text" class="input-tarefa">
+
+                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Descrição</strong></label>
+                            <input type="text" class="input-tarefa">
+
+                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Data</strong></label>
+                            <input type="text" class="input-tarefa">
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Criar</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
 
     </main>
     

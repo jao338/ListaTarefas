@@ -11,6 +11,11 @@
     font-weight: 600;
 }
 
+.input-tarefa{
+    display: block;
+    margin-bottom: 25px;
+}
+
 #titulo{
     position: relative;
     top: 120px;
@@ -40,6 +45,16 @@
     height: 40px;
 }
 
+#btn-login{
+    width: 88px;
+    height: 40px;
+}
+
+#btn-profile{
+    padding: 0;
+    width: 40px;
+    height: 40px;
+}
 #div-btn-tarefa{
     position: relative;
     top: -140px;
