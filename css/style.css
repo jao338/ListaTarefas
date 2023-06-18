@@ -51,10 +51,13 @@
 }
 
 #btn-profile{
-    padding: 0;
-    width: 40px;
-    height: 40px;
+    padding: 2px;
 }
+
+#img-profile{
+    margin-right: 15px;
+}
+
 #div-btn-tarefa{
     position: relative;
     top: -140px;

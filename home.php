@@ -25,7 +25,7 @@
             
             if ($_SESSION["status"] == 1) {
                 
-               echo "<form action='perfil.php' method='POST'><button type='submit' id='btn-profile' class='btn btn-primary'><img src='img-icon/profile/512x512_.png' alt='profile' width='24' height='24'></button></form>";
+               echo "<form action='perfil.php' method='POST'><button type='submit' id='btn-profile' class='btn btn-primary'><img src='img-icon/profile/512x512_.png' id='img-profile' alt='profile' width='32' height='32'>".$_SESSION["x1"]."</button></form>";
             }
             ?>
             
