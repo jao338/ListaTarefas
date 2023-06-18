@@ -1,15 +1,3 @@
-<?php
-    include './user.php';
-    $obj = new user();
-
-    if(isset($_POST['btn-login'])){
-
-    
-    } 
-    
-?>
-
-
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -37,9 +25,10 @@
 
             <div class="row mb-3" style="margin-top: 30px;">
 
+            <form action="index.php" method="POST">
               <div class="col-md-6 col-lg-12">
                 <label for="formGroupExampleInput" class="form-label form-camp"><strong>Usuário</strong></label>
-                <input type="text" class="form-control inp" id="formGroupExampleInput" placeholder="Usuário">
+                <input type="text" name="usuario" class="form-control inp" id="formGroupExampleInput" placeholder="Usuário">
               </div>
               
               </div>
@@ -47,7 +36,7 @@
 
                 <div class="col-md-6 col-lg-12">
                   <label for="formGroupExampleInput2" class="form-label form-camp"><strong>Senha</strong></label>
-                  <input type="password" class="form-control inp" id="formGroupExampleInput2" placeholder="Senha">
+                  <input type="password" name="senha" class="form-control inp" id="formGroupExampleInput2" placeholder="Senha">
                 </div>
               </div>
 
@@ -55,8 +44,7 @@
                 
                 <div class="col-md-6 col-lg-12">
 
-                <form action="index.php">
-                    <button type="submit" class="btn-login">ENTRAR</button>
+                    <button type="submit" name="btn-login" class="btn-login">ENTRAR</button>
                 </form>
 
                     <p>Esqueceu a sua senha?</p>

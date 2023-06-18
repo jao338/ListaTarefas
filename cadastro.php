@@ -2,8 +2,12 @@
     include './user.php';
     $obj = new user();
 
-    if(isset($_POST['btn-login'])){
+    if(isset($_POST['btn-cad'])){
 
+    $user = $_POST['usuario'];
+    $senha = $_POST['senha'];
+
+    $obj->insert_user($user, $senha);
     
     } 
     
@@ -37,9 +41,11 @@
 
             <div class="row mb-3" style="margin-top: 30px;">
 
+            <form action="cadastro.php" method="POST">
               <div class="col-md-6 col-lg-12">
                 <label for="formGroupExampleInput" class="form-label form-camp"><strong>Usuário</strong></label>
-                <input type="text" class="form-control inp" id="formGroupExampleInput" placeholder="Usuário">
+                <input type="text" name="usuario" class="form-control inp" id="formGroupExampleInput" placeholder="Usuário">
+
               </div>
               
               </div>
@@ -47,7 +53,7 @@
 
                 <div class="col-md-6 col-lg-12">
                   <label for="formGroupExampleInput2" class="form-label form-camp"><strong>Senha</strong></label>
-                  <input type="password" class="form-control inp" id="formGroupExampleInput2" placeholder="Senha">
+                  <input type="password" name="senha" class="form-control inp" id="formGroupExampleInput2" placeholder="Senha">
                 </div>
               </div>
 
@@ -55,8 +61,8 @@
                 
                 <div class="col-md-6 col-lg-12">
 
-                <form action="login.php">
-                    <button type="submit" class="btn-login">CADASTRAR</button>
+                    <input type="submit" name="btn-cad" class="btn-login" value="CADASTRAR">
+
                 </form>
 
                     <hr>

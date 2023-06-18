@@ -1,3 +1,21 @@
+<?php
+    include './user.php';
+    $obj = new user();
+
+    if(isset($_POST['btn-login'])){
+
+    $user = $_POST['usuario'];
+    $senha = $_POST['senha'];
+
+    if($obj->validate($user, sha1($senha))) {
+
+    }else{
+        header("Location: http://localhost/ListaTarefas/erro.php");
+    }
+    } 
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -32,55 +50,35 @@
 
         <table id="tabela" class="table">
             <thead>
-                <tr>
-                    <th style="border-bottom: 0;">
-                        <button type="button" id="btn-tarefa" class="btn btn-primary">Nova Tarefa</button>
-                    </th>
-                </tr>
-                <tr>
-                    <th scope="col"><br>Status</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Excluir</th>
-                    <th scope="col">Ver</th>
-                </tr>
+            <tr>
+                <th style="border-bottom: 0;">
+                    <button type="button" id="btn-tarefa" class="btn btn-primary">Nova Tarefa</button>
+                </th>
+            </tr>
+            <tr>
+                <th scope="col"><br>Status</th>
+                <th scope="col">ID</th>
+                <th scope="col">Título</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+                <th scope="col">Ver</th>
+            </tr>
             </thead>
 
             
             <tbody>
             <tr>
-                    <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
-                        <td>1</td>
-                        <td>Título da tarefa</td>
-                        <td>Aqui vai a descrição da tarefa</td>
-                        <td>13/06/2023</td>
-                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
-                        <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
-                </tr>
-                <tr>
-                    <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
-                        <td>2</td>
-                        <td>Título da tarefa</td>
-                        <td>Aqui vai a descrição da tarefa</td>
-                        <td>13/06/2023</td>
-                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
-                        <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
-                </tr>
-                <tr>
-                    <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
-                        <td>3</td>
-                        <td>Título da tarefa</td>
-                        <td>Aqui vai a descrição da tarefa</td>
-                        <td>13/06/2023</td>
-                        <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
-                        <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
-                        <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
-                </tr>
+                <th scope="row"><input type="checkbox" id="status" name="check-status" value="xxx"></th>
+                    <td>0</td>
+                    <td>Título da tarefa</td>
+                    <td>Aqui vai a descrição da tarefa</td>
+                    <td>13/06/2023</td>
+                    <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
+                    <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
+                    <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#janelaModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
+            </tr>
 
             </tbody>
         </table>
