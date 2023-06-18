@@ -15,7 +15,7 @@
     <h1>Teste</h1>
 <?php
 
-    echo $obj->edit_status("Titulo1", 0);
+    echo $obj->select_all();
 ?>
 </body>
 </html>

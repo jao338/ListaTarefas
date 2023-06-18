@@ -50,7 +50,6 @@
             </tr>
             <tr>
                 <th scope="col"><br>Status</th>
-                <th scope="col">ID</th>
                 <th scope="col">Título</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Data</th>
@@ -60,18 +59,13 @@
             </tr>
             </thead>
 
-            
+                <?php
+
+                linha();
+                    
+                ?>
             <tbody>
-            <tr>
-                <th scope="row">Feito</th>
-                    <td>0</td>
-                    <td>Título da tarefa</td>
-                    <td>Aqui vai a descrição da tarefa</td>
-                    <td>13/06/2023</td>
-                    <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
-                    <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
-                    <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#ViewModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
-            </tr>
+            
 
             </tbody>
         </table>
@@ -140,5 +134,23 @@
 
 </body>
 </html>
+
+<?php
+
+    function linha(){
+
+        echo"<tr>
+            <th scope='row'>Feito</th>
+            <td>Titulo</td>
+            <td>Descrição da tarefa</td>
+            <td>Data</td>
+            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#EditModal'><img src='img-icon/edit/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
+            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#RemoveModal'><img src='img-icon/remove/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
+            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#ViewModal'><img src='img-icon/view/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
+
+            <tr>";
+
+    }
+?>
 
     

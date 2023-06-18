@@ -30,7 +30,7 @@
     
             while ($vetor = mysqli_fetch_array($res)) {
                
-            $retorno .= ($vetor["Titulo"] . $vetor["Status"] . $vetor["Descricao"]. $vetor["Data"]);
+            $retorno .= ($vetor["Titulo"] .".". $vetor["Status"] .".". $vetor["Descricao"] .".". $vetor["Data"]. ";");
     
             }
     
