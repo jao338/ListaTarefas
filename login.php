@@ -15,7 +15,7 @@
       $_SESSION["x1"] = $user;
       $_SESSION["x2"] = sha1($senha);
 
-      header("Location: http://localhost/ListaTarefas/index.php");
+      header("Location: http://localhost/ListaTarefas/home.php");
     }else{
         header("Location: http://localhost/ListaTarefas/erro.php");
     }

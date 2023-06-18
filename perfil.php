@@ -17,7 +17,7 @@
     echo "Senha - " . $_SESSION["x2"];
 ?>
     
-    <form action="index.php">
+    <form action="home.php">
         <input type="submit" value="Voltar">
     </form>
 </body>

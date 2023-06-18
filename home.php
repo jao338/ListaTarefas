@@ -15,9 +15,19 @@
     <nav class="navbar fixed-top navbar-expand-lg">
 
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="home.php">
                 <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
+            
+            <?php
+
+            session_start();
+            
+            if ($_SESSION["status"] == 1) {
+                
+               echo "<form action='perfil.php' method='POST'><button type='submit' id='btn-profile' class='btn btn-primary'><img src='img-icon/profile/512x512_.png' alt='profile' width='24' height='24'></button></form>";
+            }
+            ?>
             
             <form action="login.php" method="POST">
                 <button type="submit" id="btn-login" class="btn btn-primary">Login</button>
