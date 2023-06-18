@@ -55,7 +55,7 @@
                 
                 <div class="col-md-6 col-lg-12">
 
-                <form action="login.php">
+                <form action="index.php">
                     <button type="submit" class="btn-login">ENTRAR</button>
                 </form>
 
