@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Algo deu errado</h1>
-    <a href="index.php">Voltar</a>
+    <a href="login.php">Voltar</a>
 </body>
 </html>

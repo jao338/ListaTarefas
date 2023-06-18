@@ -1,21 +1,3 @@
-<?php
-    include './user.php';
-    $obj = new user();
-
-    if(isset($_POST['btn-login'])){
-
-    $user = $_POST['usuario'];
-    $senha = $_POST['senha'];
-
-    if($obj->validate($user, sha1($senha))) {
-
-    }else{
-        header("Location: http://localhost/ListaTarefas/erro.php");
-    }
-    } 
-    
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,10 +18,20 @@
             <a class="navbar-brand" href="index.php">
                 <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
+            
+            <?php
+            
+            session_start();
 
+            if ($_SESSION["status"] == 1) {
+               echo "<a href='perfil.php'>Perfil</a>";
+            }
+            ?>
+            
             <form action="login.php" method="POST">
                 <button type="submit" id="btn-login" class="btn btn-primary">Login</button>
             </form>
+            
         </div>
 
     </nav>

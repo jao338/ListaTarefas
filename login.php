@@ -1,3 +1,28 @@
+<?php
+    include './user.php';
+    $obj = new user();
+
+    if(isset($_POST['btn-login'])){
+
+    $user = $_POST['usuario'];
+    $senha = $_POST['senha'];
+
+    if($obj->validate($user, sha1($senha))) {
+      
+      session_start();
+
+      $_SESSION["status"] = 1;
+      $_SESSION["x1"] = $user;
+      $_SESSION["x2"] = sha1($senha);
+
+      header("Location: http://localhost/ListaTarefas/index.php");
+    }else{
+        header("Location: http://localhost/ListaTarefas/erro.php");
+    }
+    } 
+    
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -25,7 +50,7 @@
 
             <div class="row mb-3" style="margin-top: 30px;">
 
-            <form action="index.php" method="POST">
+            <form action="login.php" method="POST">
               <div class="col-md-6 col-lg-12">
                 <label for="formGroupExampleInput" class="form-label form-camp"><strong>Usuário</strong></label>
                 <input type="text" name="usuario" class="form-control inp" id="formGroupExampleInput" placeholder="Usuário">
