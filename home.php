@@ -68,6 +68,7 @@
                 
                 $obj1->select_all($_SESSION["x3"]);
                     
+                //echo "<p style='margin-top: 50px'>Index: <span = id='index'></span></p>";
                 ?>
             <tbody>
             
@@ -89,7 +90,7 @@
                     <div class="modal-body">
 
                         <h6 id="subtitulo-modal">Subtítulo</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit vel sapiente autem culpa provident optio sint explicabo quas tempora eius doloremque asperiores eos, officiis nam atque totam voluptatum distinctio iste?</p>
+                        <p style="margin-top: 50px">Index: <span id="index"></span></p>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit vel sapiente autem culpa provident optio sint explicabo quas tempora eius doloremque asperiores eos, officiis nam atque totam voluptatum distinctio iste?</p>
                     </div>
                     <div class="modal-footer">
@@ -129,12 +130,12 @@
                 </div>
             </div>
             
-        </div>
+        </div >
 
 
     </main>
     
-
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>

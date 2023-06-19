@@ -28,7 +28,7 @@
     
             while ($vetor = mysqli_fetch_array($res)) {
 
-            echo"<tr>
+            echo"<tr onclick='getIndex(this)'>
             <th scope='row'>$vetor[1]</th>
             <td>$vetor[0]</td>
             <td>$vetor[2]</td>
@@ -38,7 +38,7 @@
             <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#ViewModal'><img src='img-icon/view/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
 
             <tr>";
-    
+
             }
 
         }
