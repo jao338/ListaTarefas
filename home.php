@@ -68,7 +68,7 @@
                 
                 $obj1->select_all($_SESSION["x3"]);
                     
-                //echo "<p style='margin-top: 50px'>Index: <span = id='index'></span></p>";
+                
                 ?>
             <tbody>
             
@@ -90,7 +90,6 @@
                     <div class="modal-body">
 
                         <h6 id="subtitulo-modal">Subtítulo</h6>
-                        <p style="margin-top: 50px">Index: <span id="index"></span></p>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit vel sapiente autem culpa provident optio sint explicabo quas tempora eius doloremque asperiores eos, officiis nam atque totam voluptatum distinctio iste?</p>
                     </div>
                     <div class="modal-footer">
@@ -130,9 +129,12 @@
                 </div>
             </div>
             
-        </div >
+        </div>
 
-
+    <!--O parágrafo abaixo exibe o atual index da tr que foi clicada--> 
+    
+    <!-- <p style='margin-top: 350px;'>Index: <span id='index'></span></p> --> 
+        
     </main>
     
     <script src="js/script.js"></script>
