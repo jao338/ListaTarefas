@@ -24,18 +24,23 @@
             $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
             mysqli_select_db($conexao, "ListaTarefas");
     
-            $retorno = "";
-    
             $res = mysqli_query($conexao, "SELECT * FROM `tarefa`");
     
             while ($vetor = mysqli_fetch_array($res)) {
-               
-            $retorno .= ($vetor["Titulo"] .".". $vetor["Status"] .".". $vetor["Descricao"] .".". $vetor["Data"]. ";");
+
+            echo"<tr>
+            <th scope='row'>$vetor[1]</th>
+            <td>$vetor[0]</td>
+            <td>$vetor[2]</td>
+            <td>$vetor[3]</td>
+            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#EditModal'><img src='img-icon/edit/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
+            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#RemoveModal'><img src='img-icon/remove/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
+            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#ViewModal'><img src='img-icon/view/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
+
+            <tr>";
     
             }
-    
-        return $retorno;
-    
+
         }
 
         function select_task ($titulo){

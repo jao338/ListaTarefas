@@ -61,7 +61,10 @@
 
                 <?php
 
-                linha();
+                include './tarefa.php';
+                $obj = new tarefa();
+                
+                $obj->select_all();
                     
                 ?>
             <tbody>
@@ -135,22 +138,5 @@
 </body>
 </html>
 
-<?php
-
-    function linha(){
-
-        echo"<tr>
-            <th scope='row'>Feito</th>
-            <td>Titulo</td>
-            <td>Descrição da tarefa</td>
-            <td>Data</td>
-            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#EditModal'><img src='img-icon/edit/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
-            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#RemoveModal'><img src='img-icon/remove/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
-            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#ViewModal'><img src='img-icon/view/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
-
-            <tr>";
-
-    }
-?>
 
     
