@@ -14,6 +14,7 @@
       $_SESSION["status"] = 1;
       $_SESSION["x1"] = $user;
       $_SESSION["x2"] = sha1($senha);
+      $_SESSION["x3"] = $obj->select_id($user);
 
       header("Location: http://localhost/ListaTarefas/home.php");
     }else{

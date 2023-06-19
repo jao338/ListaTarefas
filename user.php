@@ -41,6 +41,25 @@
 
     }
 
+    function select_id ($user){
+
+        $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
+        mysqli_select_db($conexao, "ListaTarefas");
+
+        $retorno = "";
+
+        $res = mysqli_query($conexao, "SELECT * FROM `user` WHERE `Login` LIKE '$user'");
+
+        while ($vetor = mysqli_fetch_array($res)) {
+           
+        $retorno = ($vetor["ID"]);
+
+        }
+        
+    return $retorno;
+
+    }
+
     function insert_user ($user, $senha){
 
         $conexao = mysqli_connect("127.0.0.1:3307", "root", "");

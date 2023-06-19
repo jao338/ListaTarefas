@@ -62,9 +62,11 @@
                 <?php
 
                 include './tarefa.php';
-                $obj = new tarefa();
+                include './user.php';
+                $obj1 = new tarefa();
+                $obj2 = new user();
                 
-                $obj->select_all();
+                $obj1->select_all($_SESSION["x3"]);
                     
                 ?>
             <tbody>

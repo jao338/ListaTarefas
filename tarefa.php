@@ -2,14 +2,14 @@
 
     class tarefa {
 
-        function insert_task ($titulo, $descricao, $data){
+        function insert_task ($titulo, $descricao, $data, $id){
 
             $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
             mysqli_select_db($conexao, "ListaTarefas");
     
             $retorno = false;
     
-            $res = mysqli_query($conexao, "INSERT INTO `tarefa` (`Titulo`, `Status`, `Descricao`, `Data`) VALUES ('$titulo', '0', '$descricao', '$data')");
+            $res = mysqli_query($conexao, "INSERT INTO `tarefa` (`Titulo`, `Status`, `Descricao`, `Data`) VALUES ('$titulo', '0', '$descricao', '$data', '$id')");
     
             if($res != null){
                 $retorno = true;
@@ -19,12 +19,12 @@
     
         }
 
-        function select_all (){
+        function select_all ($id){
 
             $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
             mysqli_select_db($conexao, "ListaTarefas");
     
-            $res = mysqli_query($conexao, "SELECT * FROM `tarefa`");
+            $res = mysqli_query($conexao, "SELECT * FROM `tarefa` WHERE Id = '$id';");
     
             while ($vetor = mysqli_fetch_array($res)) {
 

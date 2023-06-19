@@ -1,6 +1,6 @@
 <?php
-    include './tarefa.php';
-    $obj = new tarefa();
+    include './user.php';
+    $obj = new user();
 
 ?>
 
@@ -15,7 +15,7 @@
     <h1>Teste</h1>
 <?php
 
-    //$obj->select_all();
+   echo $obj->select_id("jao338");
 ?>
 </body>
 </html>
