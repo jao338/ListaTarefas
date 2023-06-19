@@ -9,7 +9,7 @@
     
             $retorno = false;
     
-            $res = mysqli_query($conexao, "INSERT INTO `tarefa` (`Titulo`, `Status`, `Descricao`, `Data`) VALUES ('$titulo', '0', '$descricao', '$data', '$id')");
+            $res = mysqli_query($conexao, "INSERT INTO `tarefa` (`Titulo`, `Descricao`, `Data`, `Id`) VALUES ('$titulo', '$descricao', '$data', '$id')");
     
             if($res != null){
                 $retorno = true;
@@ -29,10 +29,9 @@
             while ($vetor = mysqli_fetch_array($res)) {
 
             echo"<tr onclick='getIndex(this)'>
-            <th scope='row'>$vetor[1]</th>
             <td>$vetor[0]</td>
+            <td>$vetor[1]</td>
             <td>$vetor[2]</td>
-            <td>$vetor[3]</td>
             <tr>";
 
             }
@@ -49,19 +48,49 @@
             while ($vetor = mysqli_fetch_array($res)) {
 
             echo"<tr onclick='getIndex(this)'>
-            <th scope='row'>$vetor[1]</th>
             <td>$vetor[0]</td>
+            <td>$vetor[1]</td>
             <td>$vetor[2]</td>
-            <td>$vetor[3]</td>
-            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#EditModal'><img src='img-icon/edit/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
-            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#RemoveModal'><img src='img-icon/remove/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
-            <td><button type='button' id='btn-view' class='btn btn-glass' data-bs-toggle='modal' data-bs-target='#ViewModal'><img src='img-icon/view/512x512.png' alt='icon' width='24' height='24' class='icon-view'></button></td>
 
+            
             <tr>";
 
             }
 
         }
+
+        function select_data ($titulo){
+
+            $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
+            mysqli_select_db($conexao, "ListaTarefas");
+    
+
+            $res = mysqli_query($conexao, "SELECT * FROM `tarefa` WHERE Titulo = '$titulo';");
+    
+            while ($vetor = mysqli_fetch_array($res)) {
+
+            echo $vetor[2];
+
+            }
+
+        }
+
+        function select_desc ($titulo){
+
+            $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
+            mysqli_select_db($conexao, "ListaTarefas");
+    
+
+            $res = mysqli_query($conexao, "SELECT * FROM `tarefa` WHERE Titulo = '$titulo';");
+    
+            while ($vetor = mysqli_fetch_array($res)) {
+
+            echo $vetor[1];
+
+            }
+
+        }
+
 
         function remove_task ($titulo){
 
@@ -80,12 +109,12 @@
     
         }
 
-        function edit_task ($titulo, $new_titulo, $descricao, $data){
+        function edit_task ($titulo, $new_titulo, $descricao, $data, $id){
     
             $retorno = false;
     
             $n1 = $this->remove_task($titulo);
-            $n2 = $this->insert_task($new_titulo, $descricao, $data);
+            $n2 = $this->insert_task($new_titulo, $descricao, $data, $id);
 
             if($n1 && $n2){
                 $retorno = true;
@@ -95,26 +124,6 @@
     
         }
 
-        function edit_status ($titulo, $status){
-    
-            $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
-            mysqli_select_db($conexao, "ListaTarefas");
-    
-            $retorno = false;
-    
-            if($status == 0){
-                $res = mysqli_query($conexao, "UPDATE `tarefa` SET `Status` = '1' WHERE `tarefa`.`Titulo` = '$titulo'");
-            }else if($status == 1){
-                $res = mysqli_query($conexao, "UPDATE `tarefa` SET `Status` = '0' WHERE `tarefa`.`Titulo` = '$titulo'");
-            }
-
-            if($res != null){
-                $retorno = true;
-            }
-
-        return $retorno;
-    
-        }
         
     }
  

@@ -1,6 +1,6 @@
 <?php
-    include './user.php';
-    $obj = new user();
+    include './tarefa.php';
+    $obj = new tarefa();
 
 ?>
 
@@ -15,7 +15,7 @@
     <h1>Teste</h1>
 <?php
 
-   echo $obj->select_id("jao338");
+   $obj->insert_task("Titulo1", "Nenhum1", "19/06/2023", "1");
 ?>
 </body>
 </html>

@@ -5,12 +5,19 @@
     $obj2 = new user();
 
     session_start();
-
-    if(isset($_POST['btn-busca'])){
-
-
-    } 
     
+    if(isset($_POST['btn-edit'])){
+
+        $obj1->edit_task($_POST['tit'], $_POST['tit'], $_POST['desc'], $_POST['dat'], $_SESSION["x3"]);
+
+        header("Location: http://localhost/ListaTarefas/home.php");
+        
+    }else if(isset($_POST['btn-remove'])){
+
+        $obj1->remove_task($_SESSION["busca"]);
+
+        header("Location: http://localhost/ListaTarefas/home.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -33,18 +40,8 @@
             <a class="navbar-brand" href="home.php">
                 <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
-
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                    <form class="d-flex" role="search" action="busca.php">
-                    <input class="form-control me-2" type="search" placeholder="Titulo" aria-label="buscar">
-                    <button id="btn-busca" class="btn btn-danger" type="submit">Buscar</button>
-                    </form>
-                </div>
-            </nav>
             
             <?php
-
             
             if ($_SESSION["status"] == 1) {
                 
@@ -62,23 +59,16 @@
 
     <main class="container">
 
-        <h1 id="titulo" class="display-6">Agenda</h1>
+        <h1 id="titulo" class="display-4">Agenda</h1>
 
         <table id="tabela" class="table">
             <thead>
+
             <tr>
-                <th style="border-bottom: 0;">
-                    <button type="button" id="btn-tarefa" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TarefaModal">Nova Tarefa</button>
-                </th>
-            </tr>
-            <tr>
-                <th scope="col"><br>Status</th>
                 <th scope="col">Título</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Data</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Excluir</th>
-                <th scope="col">Ver</th>
+
             </tr>
             </thead>
 
@@ -86,7 +76,6 @@
                 
                 $obj1->select_task($_SESSION["busca"]);
                     
-                
                 ?>
             <tbody>
             
@@ -94,63 +83,38 @@
             </tbody>
         </table>
 
-        
-        
-        <!--Modal view-->
-        <div class="modal fade" id="ViewModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
+        <h1 id="titulo" class="display-6" style="margin-top: 50px;">Editar</h1>
 
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+        <table id="tabela1" class="table">
+            <thead>
 
-                        <h6 id="subtitulo-modal">Subtítulo</h6>
-                        <p style='margin-top: 350px;'>Index: <span id='index'></span></p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit vel sapiente autem culpa provident optio sint explicabo quas tempora eius doloremque asperiores eos, officiis nam atque totam voluptatum distinctio iste?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
+            <tr>
+                <th scope="col">Título</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Remover</th>
+
+            </tr>
+            </thead>
+
+                
+            <tbody>
             
-        </div>
-
-        <!--Modal tarefa-->
-        <div class="modal fade" id="TarefaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div>
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Título</strong></label>
-                            <input type="text" class="input-tarefa">
-
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Descrição</strong></label>
-                            <input type="text" class="input-tarefa">
-
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Data</strong></label>
-                            <input type="text" class="input-tarefa">
-                        </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <form action="home.php">
-                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Criar</button>
+                <tr>
+                    <form action="busca.php" method="POST">
+                        <td><input type="text" name="tit" value="<?php echo $_SESSION["busca"]?>"></td>
+                        <td><input type="text" name="desc" value="<?php echo $obj1->select_desc($_SESSION["busca"])?>"></td>
+                        <td><input type="text" name="dat" value="<?php echo $obj1->select_data($_SESSION["busca"])?>"></td>
+                        <td><button type="submit" id="btn-edit" name="btn-edit" class="btn btn-primary">Editar</button></td>
+                        <form action="busca.php" method="POST">
+                            <td><button type="submit" id="btn-remove" name="btn-remove" class="btn btn-danger">Remover</button></td> 
                         </form>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+                    </form>
+                <tr>
+
+            </tbody>
+        </table>
 
     <!--O parágrafo abaixo exibe o atual index da tr que foi clicada--> 
     

@@ -12,7 +12,9 @@
 
         header("Location: http://localhost/ListaTarefas/busca.php");
     
-    } 
+    }else if(isset($_POST['btn-remove'])){
+        header("Location: http://localhost/ListaTarefas/busca.php");
+    }
     
 ?>
 
@@ -37,11 +39,11 @@
                 <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
 
-            <nav class="navbar bg-body-tertiary">
+            <nav class="navbar" style="border: none; outline: none;">
                 <div class="container-fluid">
                     <form class="d-flex" role="search" action="home.php" method="POST">
-                        <input type="text" name="titulo" class="form-control inp" id="formGroupExampleInput" placeholder="Titulo">
-                        <button id="btn-busca" name="btn-busca" class="btn btn-danger" type="submit">Buscar</button>
+                        <input type="text" name="titulo" class="form-control inp" id="formGroupExampleInput" placeholder="Titulo" style="text-align: center; height: 40px;">
+                        <button id="btn-busca" name="btn-busca" class="btn btn-danger" type="submit" style="margin-left: 20px;">Buscar</button>
                     </form>
                 </div>
             </nav>
@@ -75,7 +77,6 @@
                 </th>
             </tr>
             <tr>
-                <th scope="col"><br>Status</th>
                 <th scope="col">Título</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Data</th>
@@ -84,8 +85,6 @@
 
                 <?php
 
-                
-                
                 $obj1->select_all($_SESSION["x3"]);
                     
                 

@@ -34,7 +34,15 @@
     position: relative;
     top: 140px;
     border: 1px solid black;
+
 }
+
+#tabela1{
+    position: relative;
+    top: 140px;
+
+}
+
 
 .navbar{
     border: 1px solid black;
