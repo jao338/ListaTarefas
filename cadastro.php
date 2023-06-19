@@ -8,7 +8,7 @@
     $senha = $_POST['senha'];
 
     $obj->insert_user($user, $senha);
-    
+      header("Location: http://localhost/ListaTarefas/login.php");
     } 
     
 ?>

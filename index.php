@@ -33,95 +33,25 @@
 
         <table id="tabela" class="table">
             <thead>
+            
             <tr>
-                <th style="border-bottom: 0;">
-                    <button type="button" id="btn-tarefa" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TarefaModal">Nova Tarefa</button>
-                </th>
-            </tr>
-            <tr>
-                <th scope="col"><br>Status</th>
-                <th scope="col">ID</th>
                 <th scope="col">Título</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Data</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Excluir</th>
-                <th scope="col">Ver</th>
+
             </tr>
             </thead>
 
             
             <tbody>
             <tr>
-                <th scope="row">Feito</th>
-                    <td>0</td>
-                    <td>Título da tarefa</td>
+                <th scope="row">Título da tarefa</th>
                     <td>Aqui vai a descrição da tarefa</td>
                     <td>13/06/2023</td>
-                    <td><a href="#"><img src="img-icon/edit/512x512.png" alt="icon" width="32" height="32" id="btn-edit" class="icon-edit"></a></td>
-                    <td><a href="#"><img src="img-icon/remove/512x512.png" alt="icon" width="32" height="32" id="btn-remove" class="icon-remove"></a></td>
-                    <td><button type="button" id="btn-view" class="btn btn-glass" data-bs-toggle="modal" data-bs-target="#ViewModal"><img src="img-icon/view/512x512.png" alt="icon" width="24" height="24" class="icon-view"></button></td>
             </tr>
 
             </tbody>
         </table>
-
-        
-        
-        <!--Modal view-->
-        <div class="modal fade" id="ViewModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <h6 id="subtitulo-modal">Subtítulo</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit vel sapiente autem culpa provident optio sint explicabo quas tempora eius doloremque asperiores eos, officiis nam atque totam voluptatum distinctio iste?</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit vel sapiente autem culpa provident optio sint explicabo quas tempora eius doloremque asperiores eos, officiis nam atque totam voluptatum distinctio iste?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        <!--Modal tarefa-->
-        <div class="modal fade" id="TarefaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div>
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Título</strong></label>
-                            <input type="text" class="input-tarefa">
-
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Descrição</strong></label>
-                            <input type="text" class="input-tarefa">
-
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Data</strong></label>
-                            <input type="text" class="input-tarefa">
-                        </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Criar</button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
 
     </main>
     
