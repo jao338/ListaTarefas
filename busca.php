@@ -8,7 +8,9 @@
     
     if(isset($_POST['btn-edit'])){
 
-        $obj1->edit_task($_POST['tit'], $_POST['tit'], $_POST['desc'], $_POST['dat'], $_SESSION["x3"]);
+        $obj1->remove_task($_SESSION["busca"]);
+
+        $obj1->edit_task($_POST['tit'], $_POST['desc'], $_POST['dat'], $_SESSION["x3"]);
 
         header("Location: http://localhost/ListaTarefas/home.php");
         
@@ -17,6 +19,7 @@
         $obj1->remove_task($_SESSION["busca"]);
 
         header("Location: http://localhost/ListaTarefas/home.php");
+
     }
 ?>
 
@@ -45,7 +48,7 @@
             
             if ($_SESSION["status"] == 1) {
                 
-               echo "<form action='perfil.php' method='POST'><button type='submit' id='btn-profile' class='btn btn-primary'><img src='img-icon/profile/512x512_.png' id='img-profile' alt='profile' width='32' height='32'>".$_SESSION["x1"]."</button></form>";
+                echo "<form action='perfil.php' method='POST'><button type='submit' style='padding: 5px;' id='btn-profile' class='btn btn-primary'>".$_SESSION["x1"]."</button></form>";
             }
             ?>
             

@@ -126,11 +126,10 @@
     
         }
 
-        function edit_task ($titulo, $new_titulo, $descricao, $data, $id){
+        function edit_task ($new_titulo, $descricao, $data, $id){
     
             $retorno = false;
     
-            $n1 = $this->remove_task($titulo);
             $n2 = $this->insert_task($new_titulo, $descricao, $data, $id);
 
             if($n1 && $n2){

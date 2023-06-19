@@ -23,41 +23,42 @@
 
         <div class="col d-flex justify-content-center">
 
-          <div class="formulario" style="margin-top: auto; margin-bottom: auto; " >
+          <div class="formulario" style="margin-top: auto; margin-bottom: auto;">
 
             <h2><strong>Meu perfil</strong></h2>
 
-            <div class="row mb-3" style="margin-top: 30px;">
-
             <form action="home.php" method="POST">
-            <div class="col-md-6 col-lg-12">
-                <?php echo "<label for='formGroupExampleInput' class='form-label form-camp'><strong>Id - ".$_SESSION['x3']."</strong></label>" ?>
+                <div class="row mb-3" style="margin-top: 30px;">
 
-            </div>
-              
-            </div>
-            <div class="row mb-3">
+                    <div class="col-md-6 col-lg-12">
+                        <?php echo "<label for='formGroupExampleInput' class='form-label form-camp'><strong>Id - ".$_SESSION['x3']."</strong></label>" ?>
+                    </div>
 
-            <div class="col-md-6 col-lg-12">
-                <?php echo "<label for='formGroupExampleInput' class='form-label form-camp'><strong>Usuário - ".$_SESSION['x1']."</strong></label>" ?>
-            </div>
-              </div>
+                </div>    
+                      
+                <div class="row mb-3">
 
-              <div class="row mb-3">
-
-            <div class="col-md-6 col-lg-12">
-                <?php echo "<label for='formGroupExampleInput' class='form-label form-camp'><strong>Senha - ".$_SESSION['x2']."</strong></label>" ?>
-            </div>
-              </div>
-
-            <div class="row mb-3">
-                
-            <div class="col-md-6 col-lg-12">
-                    <button type="submit" name="btn-login" class="btn-login">VOLTAR</button>
-            </form>
+                    <div class="col-md-6 col-lg-12">
+                        <?php echo "<label for='formGroupExampleInput' class='form-label form-camp'><strong>Usuário - ".$_SESSION['x1']."</strong></label>" ?>
+                    </div>
 
                 </div>
-              </div>
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6 col-lg-12">
+                        <?php echo "<label for='formGroupExampleInput' class='form-label form-camp'><strong>Senha - ".$_SESSION['x2']."</strong></label>" ?>
+                     </div>
+
+                </div>
+
+                <div class="row mb-3">    
+                    <div class="col-md-6 col-lg-12">
+                        <button type="submit" class="btn-login">VOLTAR</button>
+                    </div> 
+                    
+            </form>
+            </div>
 
           </div>
             
