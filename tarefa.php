@@ -59,6 +59,23 @@
 
         }
 
+        function select_title ($titulo){
+
+            $conexao = mysqli_connect("127.0.0.1:3307", "root", "");
+            mysqli_select_db($conexao, "ListaTarefas");
+    
+
+            $res = mysqli_query($conexao, "SELECT * FROM `tarefa` WHERE Titulo = '$titulo';");
+    
+            while ($vetor = mysqli_fetch_array($res)) {
+
+            echo $vetor[0];
+
+            }
+
+        }
+
+
         function select_data ($titulo){
 
             $conexao = mysqli_connect("127.0.0.1:3307", "root", "");

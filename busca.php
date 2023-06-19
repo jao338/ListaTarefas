@@ -103,7 +103,7 @@
             
                 <tr>
                     <form action="busca.php" method="POST">
-                        <td><input type="text" name="tit" value="<?php echo $_SESSION["busca"]?>"></td>
+                        <td><input type="text" name="tit" value="<?php echo $obj1->select_title($_SESSION["busca"])?>"></td>
                         <td><input type="text" name="desc" value="<?php echo $obj1->select_desc($_SESSION["busca"])?>"></td>
                         <td><input type="text" name="dat" value="<?php echo $obj1->select_data($_SESSION["busca"])?>"></td>
                         <td><button type="submit" id="btn-edit" name="btn-edit" class="btn btn-primary">Editar</button></td>

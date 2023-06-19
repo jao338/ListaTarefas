@@ -53,7 +53,7 @@
             
             if ($_SESSION["status"] == 1) {
                 
-               echo "<form action='perfil.php' method='POST'><button type='submit' id='btn-profile' class='btn btn-primary'><img src='img-icon/profile/512x512_.png' id='img-profile' alt='profile' width='32' height='32'>".$_SESSION["x1"]."</button></form>";
+               echo "<form action='perfil.php' method='POST'><button type='submit' style='padding: 5px;' id='btn-profile' class='btn btn-primary'>".$_SESSION["x1"]."</button></form>";
             }
             ?>
             
@@ -71,11 +71,7 @@
 
         <table id="tabela" class="table">
             <thead>
-            <tr>
-                <th style="border-bottom: 0;">
-                    <button type="button" id="btn-tarefa" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TarefaModal">Nova Tarefa</button>
-                </th>
-            </tr>
+
             <tr>
                 <th scope="col">Título</th>
                 <th scope="col">Descrição</th>
@@ -94,6 +90,12 @@
 
             </tbody>
         </table>
+
+        <div class="d-flex justify-content-end">
+            <form action="novatarefa.php">
+                <button type="submit" id="btn-tarefa" name="btn-task" style="margin-top: 140px;" class="btn btn-primary">Nova Tarefa</button>
+            </form>
+        </div>
 
     <!--O parágrafo abaixo exibe o atual index da tr que foi clicada--> 
     
