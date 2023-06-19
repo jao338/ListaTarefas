@@ -1,3 +1,21 @@
+<?php
+    include './tarefa.php';
+    include './user.php';
+    $obj1 = new tarefa();
+    $obj2 = new user();
+    
+    session_start();
+
+    if(isset($_POST['btn-busca'])){
+        
+        $_SESSION["busca"] = $_POST['titulo'];
+
+        header("Location: http://localhost/ListaTarefas/busca.php");
+    
+    } 
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,10 +36,18 @@
             <a class="navbar-brand" href="home.php">
                 <img src="img-icon/agenda/256x256.png" alt="agenda" width="56" height="56" class="logo-header d-inline-block align-text-center"><p id="texto-header">Lista de Tarefas</p>
             </a>
+
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search" action="home.php" method="POST">
+                        <input type="text" name="titulo" class="form-control inp" id="formGroupExampleInput" placeholder="Titulo">
+                        <button id="btn-busca" name="btn-busca" class="btn btn-danger" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
             
             <?php
 
-            session_start();
             
             if ($_SESSION["status"] == 1) {
                 
@@ -53,18 +79,12 @@
                 <th scope="col">Título</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Data</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Excluir</th>
-                <th scope="col">Ver</th>
             </tr>
             </thead>
 
                 <?php
 
-                include './tarefa.php';
-                include './user.php';
-                $obj1 = new tarefa();
-                $obj2 = new user();
+                
                 
                 $obj1->select_all($_SESSION["x3"]);
                     
@@ -76,64 +96,9 @@
             </tbody>
         </table>
 
-        
-        
-        <!--Modal view-->
-        <div class="modal fade" id="ViewModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <h6 id="subtitulo-modal">Subtítulo</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit vel sapiente autem culpa provident optio sint explicabo quas tempora eius doloremque asperiores eos, officiis nam atque totam voluptatum distinctio iste?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        <!--Modal tarefa-->
-        <div class="modal fade" id="TarefaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 id="titulo-modal" class="modal-title fs-5" id="janelaModalLabel">Título da tarefa</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div>
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Título</strong></label>
-                            <input type="text" class="input-tarefa">
-
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Descrição</strong></label>
-                            <input type="text" class="input-tarefa">
-
-                            <label for="formGroupExampleInput" class="form-label form-camp"><strong>Data</strong></label>
-                            <input type="text" class="input-tarefa">
-                        </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Criar</button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
     <!--O parágrafo abaixo exibe o atual index da tr que foi clicada--> 
     
-    <!-- <p style='margin-top: 350px;'>Index: <span id='index'></span></p> --> 
+    <!-- <p style='margin-top: 350px;'>Index: <span id='xxx'></span></p> --> 
         
     </main>
     

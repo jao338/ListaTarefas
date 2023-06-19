@@ -18,7 +18,7 @@
 
       header("Location: http://localhost/ListaTarefas/home.php");
     }else{
-        header("Location: http://localhost/ListaTarefas/erro.php");
+      header("Location: http://localhost/ListaTarefas/erro.php");
     }
     } 
     
